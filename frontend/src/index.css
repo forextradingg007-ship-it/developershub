@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { 
+    @apply font-sans bg-slate-900 text-slate-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-200 inline-flex items-center gap-2 shadow-lg shadow-primary/20;
+  }
+  .btn-outline {
+    @apply border border-white/10 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/5 transition-all duration-200 backdrop-blur-sm;
+  }
+  .section-title {
+    @apply text-4xl md:text-6xl font-black tracking-tighter text-white mb-6 font-outfit;
+  }
+  .section-subtitle {
+    @apply text-lg text-slate-400 mb-16 max-w-2xl mx-auto leading-relaxed;
+  }
+  .glass-card {
+    @apply bg-surface-low rounded-2xl border border-white/5 hover:border-primary/20 hover:bg-surface-high transition-all duration-300;
+  }
+  .input-field {
+    @apply w-full bg-slate-950 border border-white/10 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 text-white placeholder:text-slate-600 transition-all;
+  }
+  .admin-shell {
+    @apply min-h-screen bg-slate-950 text-white;
+  }
+  .admin-panel {
+    @apply bg-surface-low border border-white/10 rounded-2xl shadow-xl shadow-black/20;
+  }
+  .admin-sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white transition-all;
+  }
+  .admin-sidebar-link.active {
+    @apply bg-primary/20 text-primary-light border border-primary/30;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
